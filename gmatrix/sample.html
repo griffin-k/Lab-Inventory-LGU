@@ -1,0 +1,223 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garrison Engineering and Robotics Society</title>
+
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    {% tailwind_css %}
+  </head>
+  <body class="bg-background text-text">
+    <div>
+      <!-- Navigation Section -->
+      <header class="bg-primary text-white">
+        <nav class="container mx-auto p-4 flex items-center justify-between">
+          <div class="flex items-center">
+            <img
+              src="{% static 'images/logo.png' %}"
+              alt="Garrison Logo"
+              class="h-10 mr-4"
+            />
+            <a href="/" class="text-white text-xl font-bold">Garrison</a>
+          </div>
+          <div class="space-x-4">
+            <a href="#welcome" class="text-white hover:text-secondary">Home</a>
+            <a href="#aboutus" class="text-white hover:text-secondary">About Us</a>
+            <a href="#registration" class="text-white hover:text-secondary">Registration</a>
+            <a href="#achievements" class="text-white hover:text-secondary">Achievements</a>
+            <a href="#projects" class="text-white hover:text-secondary">Projects</a>
+            <a href="#contact" class="text-white hover:text-secondary">Contact Us</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Welcome Section -->
+      <section id="welcome" class="container mx-auto py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-3xl font-bold text-primary mb-4">Welcome to Garrison Engineering and Robotics Society</h1>
+          <p class="text-secondary">
+            "Welcome to the exciting world of Gears - where innovation, technology, and teamwork converge to shape the future. We're thrilled to have you join us on this remarkable journey of robotics and engineering excellence."
+          </p>
+        </div>
+        <div class="flex justify-center mt-8">
+          <img src="{% static 'images/robot1.jpg' %}" alt="Robot Image" class="h-64 rounded shadow-md">
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="aboutus" class="container mx-auto py-12 px-4 bg-white shadow-md rounded">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-primary mb-4 text-center">About Us</h2>
+          <p class="text-secondary mb-4 text-center">
+            <strong>Gears - Garrison Engineering and Robotics Society</strong><br>
+            <a href="mailto:gears@lgu.edu.pk" class="text-link hover:text-secondary">gears@lgu.edu.pk</a>
+          </p>
+          <h3 class="text-xl font-semibold text-primary mb-2">Mission</h3>
+          <p class="text-secondary mb-4">
+            Garrison Engineering and Robotics Society (GEARS) strives to acquaint aspiring engineers with both the theoretical and practical aspects of robotics technology through workshops and competitions. These events lay the foundation for students to excel in the field of robotics.
+          </p>
+          <h3 class="text-xl font-semibold text-primary mb-2">Vision</h3>
+          <p class="text-secondary mb-4">
+            Our aim is to nurture and empower students in the field of robotics and automation, providing them with hands-on experience to become self-sufficient.
+          </p>
+          <h3 class="text-xl font-semibold text-primary mb-2">Our Activities</h3>
+          <ul class="list-disc list-inside text-secondary mb-4">
+            <li>Participation in national and international robotics competitions.</li>
+            <li>Line Navigation</li>
+            <li>Indigenous Robotics</li>
+            <li>Modular Robotics</li>
+            <li>Robot SUMO</li>
+            <li>Robot Football</li>
+            <li>Training students for international-level robotics competitions.</li>
+            <li>Organizing robotics competitions and workshops.</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-primary mb-2">Our Aim</h3>
+          <p class="text-secondary">
+            Our core aim at GEARS is to promote excellence in robotics and engineering. We emphasize the values of teamwork, innovation, and continuous learning.
+          </p>
+        </div>
+        <div class="flex justify-center mt-8">
+          <img src="{% static 'images/walle.avif' %}" alt="Robot Image" class="h-64 rounded shadow-md">
+        </div>
+      </section>
+
+      <!-- Registration Section -->
+      <section id="registration" class="container mx-auto py-12 px-4">
+        <div class="max-w-4xl mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h2 class="text-2xl font-bold text-primary mb-4 text-center">Registration</h2>
+          <form action="/submit-registration" method="post">
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                Name
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="name"
+                type="text"
+                placeholder="Your Name"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                Email
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="email"
+                type="email"
+                placeholder="Your Email"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                Phone Number
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="phone"
+                type="tel"
+                placeholder="Your Phone Number"
+              />
+            </div>
+            <div class="mb-6">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                Additional Information
+              </label>
+              <textarea
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="message"
+                placeholder="Tell us more about your interest in Garrison"
+                rows="5"
+              ></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+              <button
+                class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Achievements Section -->
+      <section id="achievements" class="container mx-auto py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-primary mb-4 text-center">Achievements</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white shadow-md rounded p-6">
+              <h3 class="text-xl font-semibold text-primary mb-2">Achievement 1</h3>
+              <p class="text-secondary">Description of the achievement.</p>
+              <div class="mt-4">
+                <img src="{% static 'images/robot3.jpg' %}" alt="Robot Image" class="h-48 w-full object-cover rounded shadow-md">
+              </div>
+            </div>
+            <div class="bg-white shadow-md rounded p-6">
+              <h3 class="text-xl font-semibold text-primary mb-2">Achievement 2</h3>
+              <p class="text-secondary">Description of the achievement.</p>
+              <div class="mt-4">
+                <img src="{% static 'images/arduino.avif' %}" alt="Robot Image" class="h-48 w-full object-cover rounded shadow-md">
+              </div>
+            </div>
+            <div class="bg-white shadow-md rounded p-6">
+              <h3 class="text-xl font-semibold text-primary mb-2">Achievement 3</h3>
+              <p class="text-secondary">Description of the achievement.</p>
+              <div class="mt-4">
+                <img src="{% static 'images/robot2.avif' %}" alt="Robot Image" class="h-48 w-full object-cover rounded shadow-md">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="container mx-auto py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-primary mb-4 text-center">Projects</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white shadow-md rounded p-6">
+              <h3 class="text-xl font-semibold text-primary mb-2">Project 1</h3>
+              <p class="text-secondary">Description of the project.</p>
+              <div class="mt-4">
+                <img src="{% static 'images/arduino2.avif' %}" alt="Robot Image" class="h-48 w-full object-cover rounded shadow-md">
+              </div>
+            </div>
+            <div class="bg-white shadow-md rounded p-6">
+              <h3 class="text-xl font-semibold text-primary mb-2">Project 2</h3>
+              <p class="text-secondary">Description of the project.</p>
+              <div class="mt-4">
+                <img src="{% static 'images/arduino2.avif' %}" alt="Robot Image" class="h-48 w-full object-cover rounded shadow-md">
+              </div>
+            </div>
+            <div class="bg-white shadow-md rounded p-6">
+              <h3 class="text-xl font-semibold text-primary mb-2">Project 3</h3>
+              <p class="text-secondary">Description of the project.</p>
+              <div class="mt-4">
+                <img src="{% static 'images/arduino2.avif' %}" alt="Robot Image" class="h-48 w-full object-cover rounded shadow-md">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Us Section -->
+      <section id="contact" class="container mx-auto py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl font-bold text-primary mb-4">Contact Us</h2>
+          <p class="text-secondary mb-4">
+            For any inquiries, please email us at <a href="mailto:gears@lgu.edu.pk" class="text-link hover:text-secondary">gears@lgu.edu.pk</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="bg-secondary text-white p-4 text-center">
+        <p>&copy; 2024 Garrison Engineering and Robotics Society</p>
+      </footer>
+    </div>
+  </body>
+</html>
